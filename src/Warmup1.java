@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Warmup1 {
     public boolean sleepIn(boolean weekday, boolean vacation) {
@@ -127,8 +128,65 @@ public class Warmup1 {
             return "o";
         }
         return "";
+    }
+
+    public int intMax(int a, int b, int c) {
+        Integer[] values = {a,b,c};
+        return Collections.max(Arrays.asList(values));
+    }
+    public int close10(int a, int b) {
+        int diff1 = Math.abs(10-a);
+        int diff2 = Math.abs(10-b);
+        if(diff1>diff2) return b;
+        else if(diff1==diff2) return 0;
+        return a;
+    }
+
+    public boolean in3050(int a, int b) {
+        return ((a>=30 & a<=40) && (b>=30 & b<=40))||(((a>=40 & a<=50)&&(b>=40 & b<=50)));
+    }
+
+    public int max1020(int a, int b) {
+        if (b>a){
+            int m = a;
+            a=b;
+            b=m;
+        }
+        if (a >=10 && a<=20) return a;
+        if (b >=10 && b<=20) return b;
+        return 0;
+    }
+    public boolean stringE(String str) {
+        int eCounter = 0;
+        for (int i=0; i<str.length(); i++){
+            if(str.charAt(i)=='e'){
+                eCounter++;
+            }
+        }
+        return eCounter>=1 && eCounter<=3;
+    }
+
+    public boolean lastDigit(int a, int b) {
+        return (a-b)%10==0;
 
     }
+
+    public String endUp(String str) {
+        if (str.length()>=3) return str.substring(0,str.length()-3)+str.substring(str.length()-3).toUpperCase();
+        return str.toUpperCase();
+    }
+
+    public String everyNth(String str, int n) {
+        String newStr = "";
+        for (int i = 0; i<str.length(); i+=n){
+            newStr+=str.charAt(i);
+        }
+        return newStr;
+    }
+
+
+
+
 
 
 }
